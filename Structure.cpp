@@ -19,7 +19,7 @@ struct Student{
 };
 
 string getFormName(FormOfEducation form) {
-    return (form == DAY_TIME) ? "Денна" : "Нічна";
+    return (form == DAY_TIME) ? "Денна" : "Заочна";
 }
 
 // Завдання 1: Функція для виведення інформації про студента
@@ -44,7 +44,7 @@ Student inputStudent() {
     cout << "Номер залікової книжки: ";
     getline(cin, s.gradebook);
     
-    cout << "Форма навчання (1 - Денна, 2 - Нічна): ";
+    cout << "Форма навчання (1 - Денна, 2 - Заочна): ";
     int form;
     cin >> form;
     s.form = (form == 1) ? DAY_TIME : NIGHT_TIME;
@@ -78,7 +78,7 @@ void displayAllStudents(const vector<Student>& students) {
              << setw(18) << student.gradebook 
              << setw(12) << getFormName(student.form)
              << setw(8) << student.course
-             << fixed << setprecision(2) << student.grade << endl;
+             << student.grade << endl;
     }
     cout << "\n";
 }
@@ -254,4 +254,5 @@ int main() {
     } while (choice != 0);
     
     return 0;
+
 }
