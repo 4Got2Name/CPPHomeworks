@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <iomanip>
 #include <vector>
@@ -88,7 +88,7 @@ void displayAllStudents(const vector<Student>& students) {
 // Функція для сортування за номером залікової книжки
 void sortByGradebook(vector<Student>& students) {
     sort(students.begin(), students.end(), 
-         [](const Student& a, const Student& b) {
+         (const Student& a, const Student& b) {
              return a.gradebook < b.gradebook;
          });
     cout << "\nСортування за номером залікової книжки завершено!" << endl;
@@ -97,7 +97,7 @@ void sortByGradebook(vector<Student>& students) {
 // Функція для сортування за середнім балом (спадаючи)
 void sortByGrade(vector<Student>& students) {
     sort(students.begin(), students.end(), 
-         [](const Student& a, const Student& b) {
+         (const Student& a, const Student& b) {
              return a.grade > b.grade;
          });
     cout << "\nСортування за середнім балом завершено!" << endl;
